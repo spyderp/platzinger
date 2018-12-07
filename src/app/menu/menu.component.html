@@ -1,5 +1,10 @@
-<img id="main-logo" src="assets/img/logo_live.png" alt="Logo de Platziger">
-<a routerLink="/home">Home</a> |
-<a routerLink="/login">login</a> |
-<a routerLink="/profile">profile</a> |
-<i class="fab fa-apple"></i>
+<div id="menuContainer">
+ <div class="item branding" [routerLink]="['/profile']" >
+   <img id="main-logo" src="assets/img/logo_live.png" alt="Logo de Platziger">
+    Platzinger
+  </div>
+  <div class="item">
+    Profile
+  </div>
+</div>
+
