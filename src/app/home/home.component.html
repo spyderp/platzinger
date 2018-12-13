@@ -1,13 +1,42 @@
-<input type="text" placeholder="buscar amigo"  [(ngModel)]="query"  >
-<br>
+<div id="homeContainer" class="pb-3">
+  <div class="whiteBorderGlassBox">
+    <div class="homeHeadContainer">
+      <div class="row">
+        <div class="col-auto">
+          <div class="avatarFrameonline">
+            <img id="homeAvatarPicture" src="assets/img/generic_avatar.png" alt="Avatar generico">
+          </div>
+        </div>
+        <div class="col">
+          <b>Eduardio</b>
+          <div>
+            <span>Online</span>
+            <br>
+            <span  routerLinkActive="router-link-active" >Escriba un mensaje personal</span> <br>
+            <a (click)="logout()" >salir </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="whiteContainerPadded mt-2">
+      <div class="row">
+        <div class="col"><input class="form-control" type="text" placeholder="buscar amigo" [(ngModel)]="query"></div>
+        <div class="col-auto">
+          <img src="assets/img/logo_live_add.png" alt="" class="icon">
+        </div>
+      </div>
 
-<b>Amigos</b>
-<ng-container *ngFor="let user of friends | search: query; let i = index">
-	<div *ngIf="user.friend">
-    <img src="assets/img/logo_live_{{user.status}}.png" alt="imagen de estatus" width="24">
-		<a routerLink="/conversation/{{user.uid}}">
-			{{i}}. {{user.nick}} - {{user.email}}
-		</a>
-	</div>
-</ng-container>
+      <hr />
+      <b *ngIf="friends">Amigos ({{friends.length}} / {{friends.length}})</b>
+      <div *ngFor="let user of friends | search: query; let i = index" class="d-block mb-2">
+        <span routerLink="/conversation/{{user.uid}}">
+          <img src="assets/img/logo_live_online.png" class="icon">
+          <b>{{user.nick}}</b> - {{user.subnick || 'No subnick'}}
+          <small>{{user.email}}</small>
+        </span>
+      </div>
+      </div>
+    </div>
+  </div>
+
 
