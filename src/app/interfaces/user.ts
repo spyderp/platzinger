@@ -7,5 +7,6 @@ export interface User {
     email: string;
     friend: boolean;
     uid: any;
-    status: string;
+    status?: string;
+    avatar?:string
 }

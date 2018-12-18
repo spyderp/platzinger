@@ -5,6 +5,10 @@
 @import '~@fortawesome/fontawesome-free/scss/solid'
 @import '~@fortawesome/fontawesome-free/scss/brands'
 
+.avatarImage
+  width: 128px
+  height: 128px
+
 .avatarFrameOffline
   background: rgba(226,226,226,1);
   background: -moz-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%)
@@ -50,16 +54,43 @@
   .pato45
     padding: 45
 
-input[type="file"]
-  display: none
+  
 
-.custom-file-upload
-  background: #f2f6f8
-  background: -moz-linear-gradient(top, #f2f6f8 0%, #d8e1e7 50%, #b5c6d0 51%, #e0eff9 100%)
-  background: -webkit-linear-gradient(top, #f2f6f8 0%, #d8e1e7 50%, #b5c6d0 51%, #e0eff9 100%)
-  background: linear-gradient(to bottom, #f2f6f8 0%, #d8e1e7 50%, #b5c6d0 51%, #e0eff9 100%)
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f2f6f8', endColorstr='#e0eff9', GradientType=0)
+.upload-btn-wrapper 
+  position: relative
+  overflow: hidden
   display: inline-block
-  padding: 6px 12px !important
-  cursor: pointer
-  border: 1px solid #8dd2f3
+  input[type=file]
+    font-size: 100px
+    position: absolute
+    left: 0
+    top: 0
+    opacity: 0
+
+.shaker
+  animation: shake 0.5s
+  animation-iteration-count: infinite
+
+@keyframes shake
+  0%
+    transform: translate(1px,1px) rotate(0deg)
+  10%
+      transform: translate(-1px,2px) rotate(1deg)
+  20%
+     transform: translate(-3px, 0px) rotate(1deg)
+  30%
+     transform: translate(3px, 2px) rotate(0deg)
+  40%
+     transform: translate(1px, -1px) rotate(1deg)
+  50%
+     transform: translate(-1px, 2px) rotate(-1deg)
+  60%
+     transform: translate(-3px, 1px) rotate(0deg)
+  70%
+     transform: translate(3px, 1px) rotate(-1deg)
+  80%
+     transform: translate(-1px, -1px) rotate(1deg)
+  90%
+     transform: translate(1px, 2px) rotate(0deg)
+  100%
+     transform: translate(1px, -2px) rotate(-1deg)
